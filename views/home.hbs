@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .add-news-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .add-news-button:hover {
+            background-color: #2980b9;
+        }
+
+        .actualite-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actualite-item {
+            margin-bottom: 10px;
+        }
+
+        .actualite-title {
+            color: #333;
+        }
+
+        .actualite-description {
+            color: #666;
+        }
+
+        .actualite-date_pub {
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+  <h1>Actualité</h1>  
+  <a class="add-news-button" href="/add"> ajouter une actualite  </a>
+  {{#each actualites}}
+  <div class="actualite-container">
+    <div class="actualite-item">
+        <h2 class="actualite-title">{{titre}}</h2>
+        <p class="actualite-description">{{description}}</p>
+        <p class="actualite-date_pub"> Date : {{date_pub}}</p>
+    </div>
+  </div>
+  {{/each}}
+</body>
+</html>
